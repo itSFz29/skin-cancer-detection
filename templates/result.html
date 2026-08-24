@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container py-5 mt-5">
+    <div class="row g-5 align-items-center">
+        <div class="col-lg-5 text-center">
+            <div class="result-img-container p-2 bg-glass rounded-4 shadow-lg position-relative overflow-hidden">
+                <div class="scan-line"></div> <img src="{{ url_for('static', filename='uploads/' + img) }}" class="img-fluid rounded-4" alt="Analyzed Skin Lesion">
+                <div class="mt-3 text-secondary small">Analyzed Image Input</div>
+            </div>
+        </div>
+        
+        <div class="col-lg-7">
+            <div class="p-5 bg-glass rounded-4 shadow-lg border-start border-primary border-5">
+                <h6 class="text-primary text-uppercase fw-bold ls-2 mb-3">Diagnostic Output</h6>
+                <h1 class="display-3 fw-bold text-white mb-4">{{ label }}</h1>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="me-4">
+                        <div class="h5 text-secondary mb-0">Confidence</div>
+                        <div class="h2 fw-bold text-info">{{ conf_val }}%</div>
+                    </div>
+                    <div class="progress flex-grow-1 bg-dark" style="height: 12px; border-radius: 10px;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: {{ conf_val }}%;" aria-valuenow="{{ conf_val }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div class="alert alert-secondary bg-dark border-0 text-secondary small p-4 rounded-4 mb-4">
+                    <i class="fa-solid fa-circle-info me-2 text-primary"></i>
+                    <strong>Clinical Inference:</strong> The neural network has identified features consistent with <strong>{{ label }}</strong>. Please ensure this result is reviewed by a board-certified dermatologist as part of a comprehensive screening.
+                </div>
+
+                <div class="d-flex gap-3">
+                    <a href="/upload" class="btn btn-primary rounded-pill px-4 py-2">New Analysis</a>
+                    <a href="/info" class="btn btn-outline-light rounded-pill px-4 py-2">Learn about {{ label }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

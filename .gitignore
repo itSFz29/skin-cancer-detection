@@ -1,0 +1,20 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# Training datasets
+data/
+data_split/
+test/
+outputs/
+models/
+
+# Ignore all YOLO training runs
+runs/
+
+# Ignore other YOLO model files not needed by the web app
+yolo26n.pt
+yolov8n.pt
+yolov8n-cls.pt

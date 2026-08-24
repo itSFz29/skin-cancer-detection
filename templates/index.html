@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="hero-wrap d-flex align-items-center">
+    <div class="overlay"></div>
+    <div class="container text-center text-white position-relative">
+        <span class="badge bg-primary px-3 py-2 rounded-pill mb-3 animate__animated animate__fadeInDown">AI-POWERED DERMATOLOGY</span>
+        <h1 class="display-2 fw-bold mb-4">Early Detection <br><span class="text-primary">Saves Lives.</span></h1>
+        <p class="lead mb-5 opacity-75 mx-auto" style="max-width: 700px;">
+            Leveraging YOLOv8 neural networks to provide instant, high-accuracy screening for 9 types of skin lesions, preventing metastasis through early intervention.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="/upload" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-lg fw-bold">
+                <i class="fa-solid fa-expand me-2"></i>Launch Scanner
+            </a>
+            <a href="/info" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill">
+                Explore Library
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-dark">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-5 rounded-4 bg-glass h-100 text-center border-0 card-hover">
+                    <i class="fa-solid fa-microchip fa-3x text-primary mb-3"></i>
+                    <h3 class="fw-bold">YOLOv8 Core</h3>
+                    <p class="text-secondary">Utilizing the latest SOTA object detection architecture for high-speed lesion localization.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-5 rounded-4 bg-glass h-100 text-center border-0 card-hover">
+                    <i class="fa-solid fa-chart-line fa-3x text-primary mb-3"></i>
+                    <h3 class="fw-bold">95.8% Accuracy</h3>
+                    <p class="text-secondary">Top-5 classification accuracy across complex medical datasets (ISIC Archive).</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-5 rounded-4 bg-glass h-100 text-center border-0 card-hover">
+                    <i class="fa-solid fa-hospital-user fa-3x text-primary mb-3"></i>
+                    <h3 class="fw-bold">Decision Support</h3>
+                    <p class="text-secondary">Assisting clinicians in prioritizing high-risk cases like Melanoma and Carcinoma.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

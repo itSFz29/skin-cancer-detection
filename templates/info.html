@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="py-5 mt-5">
+    <div class="container text-white">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Dermatological Lesion Library</h1>
+            <p class="lead text-primary">Classified using the YOLOv8 Automated Detection System</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 bg-glass border-0 rounded-4 overflow-hidden shadow-lg">
+                    <img src="{{ url_for('static', filename='images/melanoma.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4">
+                        <span class="badge bg-danger mb-2">Malignant</span>
+                        <h4 class="fw-bold">Melanoma</h4>
+                        <p class="small text-secondary">The most lethal form. Our system identifies it by asymmetrical borders and color variation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 bg-glass border-0 rounded-4 overflow-hidden shadow-lg">
+                    <img src="{{ url_for('static', filename='images/nevus.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4">
+                        <span class="badge bg-success mb-2">Benign</span>
+                        <h4 class="fw-bold">Nevus (Mole)</h4>
+                        <p class="small text-secondary">Common moles. The AI distinguishes these from malignant melanoma through texture analysis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 bg-glass border-0 rounded-4 overflow-hidden shadow-lg">
+                    <img src="{{ url_for('static', filename='images/vascular.jpg') }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body p-4">
+                        <span class="badge bg-secondary mb-2">Vascular</span>
+                        <h4 class="fw-bold">Vascular Lesion</h4>
+                        <p class="small text-secondary">Involving blood vessels. These are identified by their distinct red and purple color palettes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+</section>
+{% endblock %}
