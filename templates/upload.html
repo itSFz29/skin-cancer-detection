@@ -18,6 +18,49 @@
                             <p id="fileNameDisplay" class="mb-0 text-info">Click to choose or drag an image here</p>
                         </label>
                     </div>
+                    <!-- Sample Images -->
+<div class="text-center mb-4">
+    <p class="text-white fw-bold mb-3">
+        Don't have an image? Try one of our sample images.
+    </p>
+
+    <div class="row g-3">
+
+        <div class="col-4">
+            <a href="{{ url_for('sample_prediction', filename='sample1.jpg') }}"
+               class="text-decoration-none">
+                <img src="{{ url_for('static', filename='samples/sample1.jpg') }}"
+                     class="img-fluid rounded-3 shadow"
+                     alt="Sample skin lesion 1"
+                     style="height: 100px; width: 100%; object-fit: cover;">
+                <small class="text-info d-block mt-2">Sample 1</small>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a href="{{ url_for('sample_prediction', filename='sample2.jpg') }}"
+               class="text-decoration-none">
+                <img src="{{ url_for('static', filename='samples/sample2.jpg') }}"
+                     class="img-fluid rounded-3 shadow"
+                     alt="Sample skin lesion 2"
+                     style="height: 100px; width: 100%; object-fit: cover;">
+                <small class="text-info d-block mt-2">Sample 2</small>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a href="{{ url_for('sample_prediction', filename='sample3.jpg') }}"
+               class="text-decoration-none">
+                <img src="{{ url_for('static', filename='samples/sample3.jpg') }}"
+                     class="img-fluid rounded-3 shadow"
+                     alt="Sample skin lesion 3"
+                     style="height: 100px; width: 100%; object-fit: cover;">
+                <small class="text-info d-block mt-2">Sample 3</small>
+            </a>
+        </div>
+
+    </div>
+</div>
                     <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill shadow-lg py-3 fw-bold">
                         <i class="fa-solid fa-gear fa-spin me-2"></i>Run Diagnosis
                     </button>
