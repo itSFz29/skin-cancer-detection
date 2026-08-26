@@ -16,7 +16,6 @@ BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "runs" / "classify" / "runs" / "classify" / "skin_cancer_classifier5" / "weights" / "best.pt"
 
 model = YOLO(str(MODEL_PATH))
-model = YOLO(MODEL_PATH)
 
 @app.route('/')
 def home_page():
