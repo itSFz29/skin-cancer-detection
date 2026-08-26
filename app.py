@@ -53,6 +53,30 @@ def diagnostic_upload():  # Renamed to avoid Flask conflict
                                    img=filename)
 
     return render_template('upload.html')
+@app.route('/sample/<filename>')
+def sample_prediction(filename):
+    allowed_samples = {'sample1.jpg', 'sample2.jpg', 'sample3.jpg'}
 
+    if filename not in allowed_samples:
+        return "Invalid sample image", 404
+
+    filepath = BASE_DIR / "static" / "samples" / filename
+
+    if not filepath.exists():
+        return "Sample image not found", 404
+
+    results = model.predict(source=str(filepath))
+
+    for result in results:
+        probs = result.probs
+        label = result.names[probs.top1]
+        confidence = float(probs.top1conf.item())
+
+    return render_template(
+        'result.html',
+        label=label,
+        conf_val=round(confidence * 100, 2),
+        img=f"samples/{filename}"
+    )
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
